@@ -89,6 +89,18 @@ generate_agent.py
 update_onboarding.py
 run_pipeline.py
 
+workflows/
+n8n_workflow.json
+
+## n8n Orchestration
+
+An n8n workflow is provided in `/workflows/n8n_workflow.json`.
+
+The workflow contains:
+Manual Trigger → Execute Command → python scripts/run_pipeline.py
+
+This acts as the orchestration layer for running the automation pipeline.
+
 ## How to Run
 
 Navigate to the scripts folder and run:
