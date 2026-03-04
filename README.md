@@ -9,52 +9,28 @@ The system processes demo transcripts to generate a preliminary Retell agent con
 
 The pipeline processes demo and onboarding transcripts to generate and update AI voice agent configurations.
 
-                +---------------------+
-                |  Demo Call Dataset  |
-                +----------+----------+
-                           |
-                           v
-                +---------------------+
-                |  Extraction Script  |
-                | extract_demo_data   |
-                +----------+----------+
-                           |
-                           v
-                +---------------------+
-                |  Account Memo JSON  |
-                |    (v1 config)      |
-                +----------+----------+
-                           |
-                           v
-                +---------------------+
-                | Agent Generator     |
-                | generate_agent.py   |
-                +----------+----------+
-                           |
-                           v
-                +---------------------+
-                | Retell Agent Spec   |
-                |      v1             |
-                +----------+----------+
-                           |
-                           v
-                +---------------------+
-                | Onboarding Updates  |
-                | update_onboarding   |
-                +----------+----------+
-                           |
-                           v
-                +---------------------+
-                | Updated Agent Spec  |
-                |       v2            |
-                +----------+----------+
-                           |
-                           v
-                +---------------------+
-                | Diff + Summary      |
-                | Version tracking    |
-                +---------------------+
+```mermaid
+flowchart TD
 
+A[Demo Call Dataset<br/>dataset/demo_calls] --> B[Extraction Script<br/>extract_demo_data.py]
+
+B --> C[Account Memo JSON<br/>outputs/accounts/*/v1/memo.json]
+
+C --> D[Agent Generator<br/>generate_agent.py]
+
+D --> E[Retell Agent Draft Spec<br/>agent.json v1]
+
+E --> F[Onboarding Input<br/>dataset/onboarding_calls]
+
+F --> G[Update Script<br/>update_onboarding.py]
+
+G --> H[Agent Spec v2 + Memo v2]
+
+H --> I[Diff + Changelog<br/>diff.json / changes.json]
+
+I --> J[Summary + Dashboard<br/>summary.json + UI]
+
+```
 Demo Call Transcript
 → Data Extraction
 → Account Memo JSON
