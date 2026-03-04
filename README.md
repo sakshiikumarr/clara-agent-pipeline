@@ -82,15 +82,21 @@ agent.json
 v2/
 memo.json
 changes.json
+diff.json
 
 scripts/
+create_tasks.py
+diff_versions.py
 extract_demo_data.py
 generate_agent.py
+generate_summary.py
 update_onboarding.py
 run_pipeline.py
 
 workflows/
 n8n_workflow.json
+
+config.json
 
 ## n8n Orchestration
 

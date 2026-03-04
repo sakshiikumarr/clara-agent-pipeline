@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Clara Pipeline Dashboard</title>
+
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    background:#f4f6fb;
+    padding:40px;
+}
+
+h1 {
+    text-align:center;
+}
+
+.container {
+    max-width:900px;
+    margin:auto;
+}
+
+.card {
+    background:white;
+    border-radius:8px;
+    padding:20px;
+    margin-bottom:15px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+.version {
+    display:inline-block;
+    background:#4CAF50;
+    color:white;
+    padding:4px 8px;
+    border-radius:4px;
+    margin-right:6px;
+    font-size:12px;
+}
+
+button {
+    margin-top:10px;
+    padding:6px 10px;
+    border:none;
+    background:#1976d2;
+    color:white;
+    border-radius:4px;
+    cursor:pointer;
+}
+
+button:hover {
+    background:#1257a6;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Clara Automation Pipeline Dashboard</h1>
+
+<div class="container">
+
+<h3 id="total"></h3>
+
+<div id="accounts"></div>
+
+</div>
+
+<script>
+
+fetch("../outputs/summary.json")
+.then(res => res.json())
+.then(data => {
+
+document.getElementById("total").innerText =
+"Total Accounts: " + data.total_accounts;
+
+const container = document.getElementById("accounts");
+
+data.accounts.forEach(acc => {
+
+const card = document.createElement("div");
+card.className = "card";
+
+let versionsHTML = "";
+
+acc.versions.forEach(v => {
+versionsHTML += `<span class="version">${v}</span>`;
+});
+
+card.innerHTML = `
+<b>Account:</b> ${acc.account_id}<br>
+<b>Versions:</b> ${versionsHTML}<br>
+<button onclick="openMemo('${acc.account_id}')">View Memo</button>
+<button onclick="openAgent('${acc.account_id}')">View Agent</button>
+`;
+
+container.appendChild(card);
+
+});
+
+});
+
+function openMemo(account){
+
+window.open(`../outputs/accounts/${account}/v1/memo.json`);
+
+}
+
+function openAgent(account){
+
+window.open(`../outputs/accounts/${account}/v1/agent.json`);
+
+}
+
+</script>
+
+</body>
+</html>
