@@ -43,36 +43,41 @@ Onboarding Transcript
 → Agent Version v2
 → Changelog
 
-## Folder Structure
+## How to Run
 
-dataset/
-demo_calls/
-onboarding_calls/
+Clone the repository:
+git clone https://github.com/sakshiikumarr/clara-agent-pipeline.git  
+cd clara-agent-pipeline
 
-outputs/
-accounts/
-account_id/
-v1/
-memo.json
-agent.json
-v2/
-memo.json
-changes.json
-diff.json
+Navigate to the scripts folder:
+cd scripts
 
-scripts/
-create_tasks.py
-diff_versions.py
-extract_demo_data.py
-generate_agent.py
-generate_summary.py
-update_onboarding.py
-run_pipeline.py
+Run the automation pipeline:
+python run_pipeline.py
 
-workflows/
-n8n_workflow.json
+This pipeline will automatically:
 
-config.json
+1. Ingest demo call transcripts from `dataset/demo_calls`
+2. Extract structured business information into **Account Memo JSON**
+3. Generate an initial **Retell Agent configuration (v1)**
+4. Process onboarding transcripts from `dataset/onboarding_calls`
+5. Apply updates and generate **Agent configuration v2**
+6. Produce **diff and changelog files** showing updates between v1 and v2
+7. Generate **summary metrics and task tracker outputs**
+
+All generated outputs are stored in:
+outputs/accounts/
+
+Each account contains versioned configurations:
+outputs/accounts/demoX/
+   v1/
+   v2/
+
+A summary report is also generated:
+outputs/summary.json
+
+To view the simple dashboard UI, open:
+dashboard/index.html
 
 ## n8n Orchestration
 
@@ -82,17 +87,6 @@ The workflow contains:
 Manual Trigger → Execute Command → python scripts/run_pipeline.py
 
 This acts as the orchestration layer for running the automation pipeline.
-
-## How to Run
-
-Navigate to the scripts folder and run:
-python run_pipeline.py
-
-This will:
-1. Process demo transcripts
-2. Generate agent configurations
-3. Apply onboarding updates
-4. Produce versioned outputs
 
 ## Key Design Decisions
 
