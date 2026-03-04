@@ -1,0 +1,7 @@
+The client confirmed their timezone is EST.
+
+Emergency fire alarm triggers should immediately transfer to the on-call technician.
+
+If transfer fails, dispatch must call the customer back.
+
+Business hours are Monday to Friday 8 AM to 6 PM.

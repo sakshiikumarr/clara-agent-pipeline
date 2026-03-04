@@ -1,0 +1,7 @@
+During onboarding the client confirmed their timezone is EST.
+
+Emergency sprinkler leaks must go directly to dispatch.
+
+If transfer fails after 60 seconds, a technician must be notified.
+
+Business hours remain Monday to Friday 9 AM to 5 PM.

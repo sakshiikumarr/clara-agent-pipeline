@@ -1,0 +1,7 @@
+The company confirmed emergency sprinkler leaks are high priority.
+
+Emergency calls should go directly to dispatch.
+
+Timezone is EST.
+
+If transfer fails, the system should record the caller details for follow up.

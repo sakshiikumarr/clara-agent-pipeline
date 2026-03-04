@@ -1,0 +1,8 @@
+{
+  "version_update": "v1 \u2192 v2",
+  "changes": [
+    "Added timezone from onboarding",
+    "Emergency routing updated to dispatch",
+    "Emergency routing updated to technician"
+  ]
+}

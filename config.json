@@ -1,0 +1,5 @@
+{
+  "demo_dataset": "dataset/demo_calls",
+  "onboarding_dataset": "dataset/onboarding_calls",
+  "accounts_output": "outputs/accounts"
+}

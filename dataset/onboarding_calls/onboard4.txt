@@ -1,0 +1,7 @@
+Emergency alarm events should go directly to the emergency response team.
+
+Timezone confirmed as EST.
+
+If transfer fails, dispatch should be notified.
+
+Business hours remain Monday to Friday 9 AM to 5 PM.

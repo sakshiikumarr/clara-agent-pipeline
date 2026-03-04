@@ -1,0 +1,17 @@
+{
+  "account_id": "demo5",
+  "company_name": null,
+  "business_hours": {
+    "days": "Mon-Fri",
+    "start": "8:00",
+    "end": "17:00"
+  },
+  "services_supported": [
+    "sprinkler services",
+    "fire alarm services"
+  ],
+  "emergency_definition": [
+    "system failure or alarm trigger"
+  ],
+  "questions_or_unknowns": []
+}

@@ -1,0 +1,5 @@
+Emergency sprinkler leaks and alarm triggers must go directly to the on-call technician.
+
+Timezone confirmed as EST.
+
+If transfer fails after 60 seconds the caller should be assured a quick follow up.

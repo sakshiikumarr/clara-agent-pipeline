@@ -1,0 +1,18 @@
+{
+  "account_id": "demo2",
+  "company_name": null,
+  "business_hours": {
+    "days": "Mon-Fri",
+    "start": "8:00",
+    "end": "17:00",
+    "timezone": "EST"
+  },
+  "services_supported": [
+    "fire alarm services"
+  ],
+  "emergency_definition": [
+    "system failure or alarm trigger"
+  ],
+  "questions_or_unknowns": [],
+  "emergency_routing_rules": "transfer to on-call technician"
+}

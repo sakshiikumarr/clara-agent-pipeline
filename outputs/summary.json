@@ -1,0 +1,40 @@
+{
+  "total_accounts": 5,
+  "accounts": [
+    {
+      "account_id": "demo1",
+      "versions": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "account_id": "demo2",
+      "versions": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "account_id": "demo3",
+      "versions": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "account_id": "demo4",
+      "versions": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "account_id": "demo5",
+      "versions": [
+        "v1",
+        "v2"
+      ]
+    }
+  ]
+}
